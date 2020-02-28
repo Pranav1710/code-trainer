@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Quantity (between 1 and 5):
+<input type="number" id="myNumber" min="1" max="5">
+
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myNumber").value;
+  for(var i=1;i<=x;i++){
+    var y = document.createElement("textarea");
+    document.write("<br>");
+    document.body.appendChild(y);
+  }
+
+}
+
+
+</script>
+
+</body>
+</html>

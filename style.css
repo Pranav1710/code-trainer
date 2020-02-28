@@ -1,0 +1,53 @@
+.wrapper{
+    background-color: white;
+}
+.abcd{
+    margin-top: 17.5em;
+    margin-bottom: 220px;
+    margin-left: 30px;
+    width: 80%;
+    border-radius: 0 !important; 
+    background-color: grey;
+    position:relative;
+    z-index: 2;
+    box-shadow: 0 10px 18px -6px black;
+}
+.btn1{
+    padding-top: 20px;
+}
+.btn2{
+    padding-top: 20px;
+}
+.btn3{
+    padding-top: 20px;
+}
+.btn4{
+    margin-top: 20px;
+    margin-left: 40px;  
+}
+.forlang{
+    margin-top: 90px;
+    margin-left: 40px;
+}
+.forcode{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.forinput{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.foroutput{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.c{
+    margin-top: 5%;
+    height: 20px;
+}
+.j1{
+    margin-left: 150px;
+    background-color: white;
+    margin-top: 50px;
+}
+
