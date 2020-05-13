@@ -5,21 +5,25 @@ if (isset($_POST['code'])) {
     $id = $_POST['tid'];
     $tc = $_POST['tcs'];
     $lan = $_POST['language'];
-
-    
+    $finalLang = $lan=="c++"?"callcpp.php":($lan=="java"?"calljava.php":"callc.php");
 ?>
-    <form id="form" method="POST" action="compile_p.php">
+    <form id="form">
         <input type="hidden" name="code" value='<?php echo $code ?>'>
         <input type="hidden" name="language" value="<?php echo $lan ?>">
         <input type="hidden" name="testcase" value="<?php echo $tc ?>">
         <input type="hidden" name="id" value="<?php echo $id ?>">
-        <input type="submit" value="sub">
-        <!-- <script>
-            // AJAX 
-            $.ajax({
+        <input type="button" value="sub" id="sub" onclick="call()">
+    </form>
+      
+<?php } ?>
+<p id="abc" name="output"></p>
+<script>
+    //wait for page load to initialize script
+    function call() {
+        $.ajax({
                 type: "POST", //type of submit
                 cache: false, //important or else you might get wrong data returned to you
-                url: "compile.php", //destination
+                url: "<?php echo $finalLang ?>" , //destination
                 datatype: "html", //expected data format from process.php
                 data: $('form').serialize(), //target your form's data and serialize for a POST
                 success: function(result) { // data is the var which holds the output of your process.php
@@ -36,14 +40,6 @@ if (isset($_POST['code'])) {
 
                 }
             });
-        </script> -->
-    </form>
-<?php } ?>
-<p id="abc" name="output"></p>
-<script>
-    //wait for page load to initialize script
-    function call() {
-
     }
 </script>
 <!-- process echo answer

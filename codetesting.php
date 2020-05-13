@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])) {
-  header("Location: login.php");
-}
+  session_start();
+  if(!isset($_SESSION['username'])){
+    header("Location: login.php");  
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +12,7 @@ if (!isset($_SESSION['username'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>codetesting</title>
+  <title>Bootstrap 101 Template</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
       <a class="navbar-brand" href="index.php" style="margin-top: 7px;">CODE TRAINER</a>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="searchfriend.php">FRIEND</a></li>
+          <li><a href="#">FRIEND</a></li>
           <li><a href="problempage.php">PROBLEM SOLVING</a></li>
           <li><a href="codetesting.php">CODE TESTING</a></li>
 
@@ -75,6 +75,7 @@ if (!isset($_SESSION['username'])) {
             <select class="form-control" name="language">
               <option value="c">C</option>
               <option value="cpp">C++</option>
+              <option value="cpp11">C++11</option>
               <option value="java">Java</option>
             </select>
           </div>
@@ -83,7 +84,7 @@ if (!isset($_SESSION['username'])) {
         <div class="row">
           <div class="col-md-10 forcode">
             <label for="code">Enter Your Code Here</label>
-            <textarea class="form-control" name="code" placeholder="Write your Code Here:" rows="12" cols="120" onkeyup="changecolor(this)" style="resize: none;"></textarea>
+            <textarea class="form-control" name="code" placeholder="Write your Code Here:" rows="12" cols="120" style="resize: none;"></textarea>
           </div>
         </div>
         <!--FOR INPUT-->
@@ -115,7 +116,6 @@ if (!isset($_SESSION['username'])) {
     <script>
       //wait for page load to initialize script
       $(document).ready(function() {
-
         //listen for form submission
         $('form').on('submit', function(e) {
           //prevent form from submitting and leaving page
@@ -137,45 +137,8 @@ if (!isset($_SESSION['username'])) {
         });
       });
     </script>
-    <script>
-      var textareas = document.getElementsByTagName('textarea');
-      var count = textareas.length;
-      for (var i = 0; i < count; i++) {
-        textareas[i].onkeydown = function(e) {
-          if (e.keyCode == 9 || e.which == 9) {
-            e.preventDefault();
-            var s = this.selectionStart;
-            this.value = this.value.substring(0, this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
-            this.selectionEnd = s + 1;
-          }
-        }
-      }
-    </script>
-    <script>
-      function changecolor(el) {
-        
-        if (el.value == "if" ||
-          el.value == "int" ||
-          el.value == "WHERE" ||
-          el.value == "float" ||
-          el.value == "Float" ||
-          el.value == "String" ||
-          el.value == "string" ||
-          el.value == "for" ||
-          el.value == "break" ||
-          el.value == "continue" ||
-          el.value == "else" ||
-          el.value == "do" ||
-          el.value == "while" ||
-          el.value == "long") {
-          el.style.color = '#aa66bb';
 
-        } else {
-          el.style.color = '#000000'
 
-        }
-      }
-    </script>
     <!--FOR OUTPUT-->
     <div class="row">
       <div class="col-md-4 foroutput">
